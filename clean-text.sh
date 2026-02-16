@@ -17,7 +17,7 @@ pbpaste | awk '
   }
   {
     gsub(/^[[:space:]]+/, "")
-    if (/^- /) {
+    if (/^[-*] / || /^[0-9]+\. /) {
       if (buf) print buf
       buf = $0
     } else {
